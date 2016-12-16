@@ -4,6 +4,7 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
+    "test": "echo \"All is ok, no test specified\" && exit 0",
     "lite": "lite-server",
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
   },
