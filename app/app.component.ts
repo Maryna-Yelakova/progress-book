@@ -1,27 +1,21 @@
 import {Component} from 'angular2/core';
 
-export class Day {
-    id: number;
-    name: string;
-}
-
+import { Day } from './day';
+import { DayDetailComponent } from './day-detail.component';
 @Component({
     selector:'progress-book',
     template:`
         <h1>{{title}}</h1>  
         <ul class="days">
-            <li *ngFor="#day of days" (click)="onSelect(day)">
+            <li *ngFor="#day of days" 
+                [class.selected]="day === selectedDay"
+                (click)="onSelect(day)">
                 <span class="badge">{{day.id}}</span>{{day.name}}
             </li>
         </ul>  
-        <div *ngIf="selectedDay">
-            <h2>{{selectedDay.name}}</h2>
-            <div>
-                <label>day: </label>
-                <input [(ngModel)]="selectedDay.name" placeholder="day"/>
-            </div>
-        </div>       
+        <my-day-detail [day]="selectedDay"></my-day-detail>  
             `,
+    directives:[DayDetailComponent],
     styles: [`
      .selected {
     background-color: #CFD8DC !important;
@@ -75,13 +69,14 @@ export class Day {
 export  class AppComponent {
     title = 'Home task';
     selectedDay: Day;
-    public days = DAYS;
+    days = DAYS;
+
     onSelect(day: Day): void {
         this.selectedDay = day;
     }
 }
 
-var DAYS: Day[] = [
+const DAYS: Day[] = [
     { "id":1, "name":"Monday" },
     { "id":2, "name":"Tuesday" },
     { "id":3, "name":"Wednesday" },
