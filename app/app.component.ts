@@ -1,7 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 
 import { Day } from './day';
 import { DayDetailComponent } from './day-detail.component';
+import { DayService } from './day.service';
+
 @Component({
     selector:'progress-book',
     template:`
@@ -64,22 +66,26 @@ import { DayDetailComponent } from './day-detail.component';
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
+`],
+    providers: [DayService]
 })
-export  class AppComponent {
+export  class AppComponent implements OnInit{
     title = 'Home task';
     selectedDay: Day;
-    days = DAYS;
+    days: Day[];
+
+    constructor(private _dayService: DayService) {}
+
+    ngOnInit(): void {
+       this.getDays();
+    }
+
+    getDays() {
+        this.days = this._dayService.getDays();
+    }
 
     onSelect(day: Day): void {
         this.selectedDay = day;
     }
 }
 
-const DAYS: Day[] = [
-    { "id":1, "name":"Monday" },
-    { "id":2, "name":"Tuesday" },
-    { "id":3, "name":"Wednesday" },
-    { "id":4, "name":"Thursday" },
-    { "id":5, "name":"Friday" }
-];
