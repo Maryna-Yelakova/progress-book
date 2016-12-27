@@ -1,4 +1,4 @@
-export class Day {
+export class Subject{
     id: number;
     name: string;
 }
