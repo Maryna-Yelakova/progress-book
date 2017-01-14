@@ -3,6 +3,7 @@ import {Component} from '@angular/core';
 // import { Subject } from './subject';
 
 
+
 @Component({
     selector:'progress-book',
     template: `
@@ -15,13 +16,14 @@ import {Component} from '@angular/core';
     </header>
     <main> 
        <nav>
-         <a routerLink="/monday">Monday</a>
-         <a routerLink="/tuesday">Tuesday</a>
-         <a routerLink="/wednesday">Wednesday</a>
-         <a routerLink="/thursday">Thursday</a>
-         <a routerLink="/friday">Friday</a>
-      <router-outlet></router-outlet>
+         <a routerLink="/monday" class="btn btn-default">Monday</a>
+         <a routerLink="/tuesday" class="btn btn-primary">Tuesday</a>
+         <a routerLink="/wednesday" class="btn btn-success">Wednesday</a>
+         <a routerLink="/thursday" class="btn btn-info">Thursday</a>
+         <a routerLink="/friday" class="btn btn-warning">Friday</a>
+            <router-outlet></router-outlet>
         </nav>
+       
     </main>
     <footer class="text-center">
       Copyright &copy; 2016
