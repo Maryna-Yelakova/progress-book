@@ -1,0 +1,21 @@
+<h2>{{day}}</h2>
+<div class="row">
+    <div class="col-sm-4">
+        <ul class="list-group users-list">
+            <li class="list-group-item"
+                *ngFor="let subject of subjects"
+                (click)="selectSubject(subject)"
+                [class.active]="subject === activeSubject">
+                {{ subject.name }}
+            </li>
+        </ul>
+    </div>
+</div>
+<div *ngIf="subject">
+    <div class="col-sm-8">
+        <div>
+            <h1>Issues</h1>
+            <p>{{ subject.task }}</p>
+        </div>
+    </div>
+</div>

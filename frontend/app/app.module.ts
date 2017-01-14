@@ -10,6 +10,7 @@ import { ThursdayComponent }      from './thursday.component';
 import { FridayComponent }      from './friday.component';
 
 
+
 @NgModule({
     imports:      [
         BrowserModule,
@@ -22,7 +23,7 @@ import { FridayComponent }      from './friday.component';
         TuesdayComponent,
         WednesdayComponent,
         ThursdayComponent,
-        FridayComponent
+        FridayComponent,
     ],
     bootstrap:    [ AppComponent ]
 })
