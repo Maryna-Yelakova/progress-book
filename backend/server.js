@@ -1,22 +1,24 @@
-var express    = require('express');
+'use strict';
+
+var express = require('express');
 var bodyParser = require('body-parser');
-var app        = express();
-var http = require("http");
+var path = require('path');
+
 var router = require('./router');
-var port = process.env.PORT || 5000;
-var server = http.createServer(app);
 
+var app = express();
+
+var port = process.env.PORT || 8000;
+
+
+// get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
 
-app.use(express.static(__dirname + '/../frontend'));
-app.use(express.static(__dirname + '/../'));
-app.use('/node_modules',  express.static(__dirname + '/../node_modules'));
+app.use(express.static(__dirname + '/../build'));kl
+app.use('/', router);
 
-server.listen(port, function(req, res) {
-    console.log('Progress-book listening on port 5000!');
+
+app.listen(port, function(req, res) {
+    console.log('Progress-book listening on port 8000!');
 });
-
-router.init(app);

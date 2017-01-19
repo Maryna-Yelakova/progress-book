@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 
 import { Subject } from './subject';
-//import { SUBJECTS } from './mock-subjects'
+import { SUBJECTS } from './mock-subjects'
 
 @Component({
+    moduleId: module.id,
     selector:'monday',
-    templateUrl:'./dist/day.component.html'
+    templateUrl:'day.component.html'
 })
 export class MondayComponent {
     day:"Moday";
