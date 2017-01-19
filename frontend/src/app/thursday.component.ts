@@ -11,7 +11,7 @@ import { Subject } from './subject';
 export class ThursdayComponent {
     day:"Thursday";
     activeSubject: Subject;
-    subjects: Subject[] = [
+    subjects: any = [
         { "id":1, "name":"Письмо", "hometask":"Type letters(from database)" },
         { "id":2, "name":"Читання", "hometask":"Read the text(from database)" },
         { "id":3, "name":"Математика", "hometask":"Count stars(from database)" },

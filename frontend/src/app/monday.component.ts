@@ -11,7 +11,7 @@ import { SUBJECTS } from './mock-subjects'
 export class MondayComponent {
     day:"Moday";
     activeSubject: Subject;
-    subjects: Subject[] = [
+    subjects: any = [
         { "id":1, "name":"Письмо", "hometask":"Type letters(from database)" },
         { "id":2, "name":"Читання", "hometask":"Read the text(from database)" },
         { "id":3, "name":"Математика", "hometask":"Count stars(from database)" },
