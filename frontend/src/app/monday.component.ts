@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import { Subject } from './subject';
-import { SUBJECTS } from './mock-subjects'
+//import { SUBJECTS } from './mock-subjects'
 
 @Component({
     moduleId: module.id,
@@ -10,8 +10,9 @@ import { SUBJECTS } from './mock-subjects'
 })
 export class MondayComponent {
     day:"Moday";
+    subject: Subject;
     activeSubject: Subject;
-    subjects: any = [
+    subjects: Subject[] = [
         { "id":1, "name":"Письмо", "hometask":"Type letters(from database)" },
         { "id":2, "name":"Читання", "hometask":"Read the text(from database)" },
         { "id":3, "name":"Математика", "hometask":"Count stars(from database)" },
