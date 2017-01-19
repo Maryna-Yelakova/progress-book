@@ -1,15 +1,14 @@
 'use strict';
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 
-var router = require('./router');
+const router = require('./router');
 
-var app = express();
+const app = express();
 
-var port = process.env.PORT || 8000;
-
+const PORT = process.env.PORT || 8000;
 
 // get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +18,6 @@ app.use(express.static(__dirname + '/../build'));
 app.use('/', router);
 
 
-app.listen(port, function(req, res) {
-    console.log('Progress-book listening on port 8000!');
+app.listen(PORT, function() {
+    console.log('Example app listening on port', PORT);
 });
