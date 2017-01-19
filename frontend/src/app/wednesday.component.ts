@@ -4,11 +4,12 @@ import { Subject } from './subject';
 //import { SUBJECTS } from './mock-subjects'
 
 @Component({
-    selector:'thursday',
-    templateUrl:'./dist/day.component.html'
+    moduleId: module.id,
+    selector:'wednesday',
+    templateUrl:'day.component.html'
 })
-export class ThursdayComponent {
-    day:"Thursday";
+export class WednesdayComponent {
+    day:"Wednwsday";
     activeSubject: Subject;
     subjects: Subject[] = [
         { "id":1, "name":"Письмо", "hometask":"Type letters(from database)" },

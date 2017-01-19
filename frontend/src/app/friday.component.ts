@@ -1,14 +1,16 @@
 import {Component} from '@angular/core';
 
 import { Subject } from './subject';
-//import { SUBJECTS } from './mock-subjects'
+// import { SUBJECTS } from './mock-subjects'
+//import { SubjectDetailComponent } from './subject-detail.component'
 
 @Component({
-    selector:'wednesday',
-    templateUrl:'./dist/day.component.html'
+    moduleId: module.id,
+    selector:'friday',
+    templateUrl:'day.component.html'
 })
-export class WednesdayComponent {
-    day:"Wednwsday";
+export class FridayComponent {
+    day:"Friday";
     activeSubject: Subject;
     subjects: Subject[] = [
         { "id":1, "name":"Письмо", "hometask":"Type letters(from database)" },
