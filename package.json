@@ -4,7 +4,8 @@
   "scripts": {
     "test": "echo \"All is ok, no test specified\" && exit 0",
     "dev": "concurrently --kill-others \"gulp dev\" ",
-    "start": "gulp default && node backend/server.js"
+    "start": "node backend/server.js",
+    "postinstall": "gulp"
   },
   "license": "ISC",
   "dependencies": {

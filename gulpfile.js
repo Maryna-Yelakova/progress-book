@@ -103,7 +103,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', gulpsync.sync([
-  'clean',
   'build'
 ]));
 
