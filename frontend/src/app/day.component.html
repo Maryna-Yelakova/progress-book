@@ -4,18 +4,18 @@
         <ul class="list-group users-list">
             <li class="list-group-item"
                 *ngFor="let subject of subjects"
-                (click)="selectSubject(subject)"
-                [class.active]="subject === activeSubject">
+                (click)="onSelect(subject)"
+                [class.active]="subject === selectedSubject">
                 {{ subject.name }}
             </li>
         </ul>
     </div>
 </div>
-<div *ngIf="subject">
-    <div class="col-sm-8">
-        <div>
-            <h1>Issues</h1>
-            <p>{{ subject.task }}</p>
-        </div>
+<div *ngIf="selectedSubject">
+    <div class="col-sm-12">
+        <h1>{{title}}  {{selectedSubject.name}}  Issues</h1>
+        <ul class="list-group users-list">
+            <li class="list-group-item">{{ selectedSubject.hometask }}</li>
+        </ul>
     </div>
 </div>

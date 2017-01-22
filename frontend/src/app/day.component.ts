@@ -11,22 +11,24 @@ import { SUBJECTS } from './mock-subjects'
 })
 export class DayComponent implements OnInit {
     subject: Subject;
-    activeSubject: Subject;
+    selectedSubject: Subject;
     subjects = SUBJECTS;
 
-    selectSubject(subject) {
-        this.activeSubject = subject;
-        console.log(this.activeSubject);
+
+    onSelect (subject: Subject){
+        this.selectedSubject = subject;
     }
 
-    constructor (private activatedRoute: ActivatedRoute) {}
 
+    constructor (private activatedRoute: ActivatedRoute) {}
+    public title: any;
 
     ngOnInit () {
         this.activatedRoute.params.subscribe(
             (param: any) => {
                 let category = param['category'];
-                console.log(category);
+                this.title = category;
+
             });
 
        
