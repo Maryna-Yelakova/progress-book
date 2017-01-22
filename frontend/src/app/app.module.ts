@@ -3,13 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule }   from './app-routing.module';
 
 import { AppComponent }  from './app.component';
-import { MondayComponent }   from './monday.component';
-import { TuesdayComponent }      from './tuesday.component';
-import { WednesdayComponent }      from './wednesday.component';
-import { ThursdayComponent }      from './thursday.component';
-import { FridayComponent }      from './friday.component';
-
-
+import { DayComponent }   from './day.component';
 
 @NgModule({
     imports:      [
@@ -19,11 +13,7 @@ import { FridayComponent }      from './friday.component';
 
     declarations: [
         AppComponent,
-        MondayComponent,
-        TuesdayComponent,
-        WednesdayComponent,
-        ThursdayComponent,
-        FridayComponent,
+        DayComponent
     ],
     bootstrap:    [ AppComponent ]
 })
