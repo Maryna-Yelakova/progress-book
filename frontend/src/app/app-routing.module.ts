@@ -1,6 +1,6 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DayComponent }   from './day.component.ts';
+import { DayComponent }   from './day.component';
 
 
 const routes: Routes = [
