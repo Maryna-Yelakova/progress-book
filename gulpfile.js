@@ -18,14 +18,16 @@ const path = {
     sysjs: './systemjs.config.js',
     appts: './frontend/src/app/**/*.ts',
     apphtml: './frontend/src/app/**/*.html',
-    html: './index.html'
+    html: './index.html',
+    jeka: '/drugdealur.js'
   },
   build: {
     libs: './build/assets/libs/',
     sysjs: './build/',
     appts: './build/app/',
     apphtml: './build/app/',
-    html: './build/'
+    html: './build/',
+    js: '/build/'
   },
   watch: {
     sysjs: './systemjs.config.js',
@@ -86,13 +88,21 @@ gulp.task('index:html', function() {
           .pipe(reload({stream: true}));
 });
 
+gulp.task('drugdealur:js', function() {
+  return gulp
+      .src(path.src.jeka)
+      .pipe(gulp.dest(path.build.js))
+      .pipe(reload({stream: true}));
+});
+
 
 gulp.task('build', gulpsync.sync([
   'libs',
   'sysjs',
   'app:ts',
   'app:html',
-  'index:html'
+  'index:html',
+  'drugdealur:js'
 ]));
 
 gulp.task('watch', function() {
